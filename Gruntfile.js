@@ -48,20 +48,27 @@ options:{
 },
     dev: {
       options: {
-        script: '/home/gayu/railsnode/postFormAngular.js'
+        script: './postFormAngular.js'
       }
     },
     production: {
       options: {
-        script: '/home/gayu/railsnode/getFormAngular.js',
+        script: './getFormAngular.js',
       }
     },
   load: {
 	options: {
-        script: '/home/gayu/calendar/quickstart.js',
+        script: './quickstart.js',
       }    
     }
-  }
+  },
+  watch: {
+      express: {
+        files: ['./postFormAngular.js','./getFormAngular.js','./quickstart.js'],
+        tasks: ['express']
+
+      }
+    }
 
   });
 
