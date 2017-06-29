@@ -48,23 +48,18 @@ options:{
 },
     dev: {
       options: {
-        script: './postFormAngular.js'
-      }
-    },
-    production: {
-      options: {
-        script: './getFormAngular.js',
+        script: 'C:/Users/HARINI K S/backend/server.js'
       }
     },
   load: {
 	options: {
-        script: './quickstart.js',
+        script: 'C:/Users/HARINI K S/backend/calendar.js',
       }    
     }
   },
   watch: {
       express: {
-        files: ['./postFormAngular.js','./getFormAngular.js','./quickstart.js'],
+        files: ['C:/Users/HARINI K S/backend/server.js','C:/Users/HARINI K S/backend/calendar.js'],
         tasks: ['express']
 
       }
