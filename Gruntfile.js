@@ -48,18 +48,18 @@ options:{
 },
     dev: {
       options: {
-        script: 'C:/Users/HARINI K S/backend/server.js'
+        script: './server.js'
       }
     },
   load: {
 	options: {
-        script: 'C:/Users/HARINI K S/backend/calendar.js',
+        script: './calendar.js',
       }    
     }
   },
   watch: {
       express: {
-        files: ['C:/Users/HARINI K S/backend/server.js','C:/Users/HARINI K S/backend/calendar.js'],
+        files: ['./server.js','./calendar.js'],
         tasks: ['express']
 
       }
