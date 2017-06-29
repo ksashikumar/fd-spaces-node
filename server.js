@@ -22,9 +22,9 @@ var connection  = require('express-myconnection'),
 app.use(
 
     connection(mysql,{
-        host     : 'localhost',
-        user     : 'root',
-        password : 'gayu1997',
+        host     : 'process.env.DBHOST',
+        user     : 'process.env.DBUSER',
+        password : 'process.env.DBPWD',
         database : 'mroom',
         debug    : false //set true if you wanna see debug logger
     },'request')
