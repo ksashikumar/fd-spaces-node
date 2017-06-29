@@ -244,4 +244,5 @@ var flag=0;
 }//function listEvents
 //setInterval(listEvents,30000);
 }
+tt();
 setInterval(tt,30000);
