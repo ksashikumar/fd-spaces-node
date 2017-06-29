@@ -222,11 +222,21 @@ var flag=0;
         var e=new Date(Date.parse(events[j].end.dateTime));
         if(b.getHours()>= d.getHours() && b.getHours()<= e.getHours() && d.getDate()==b.getDate() && b.getMonth()==d.getMonth())
         {
-            console.log("events:"+events[j].location);
+            var str=events[j].location;
+			console.log("events:"+str);
+			var flag=0;
+			if(str)
+			{
+			var temp = str.split(", ");
+			for(g=0;g<temp.length;g++)
+			{
+			console.log(temp[g]);	
             var sql = "UPDATE rooms SET calendar = ? where roomname1 = ?";
-  connection.query(sql,['1', events[j].location], function (err, result) {
+  connection.query(sql,['1', temp[g]], function (err, result) {
     if (err) throw err;
   });
+		}
+		}
         }//if
         
     }//for
