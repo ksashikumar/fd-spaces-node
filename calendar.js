@@ -255,4 +255,4 @@ var flag=0;
 //setInterval(listEvents,30000);
 }
 tt();
-setInterval(tt,30000);
+setInterval(tt,25000);
