@@ -6,15 +6,6 @@ var express  = require('express'),
     expressValidator = require('express-validator');
 
 
-/*Set EJS template Engine*/
-app.set('views','./views');
-app.set('view engine','ejs');
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.urlencoded({ extended: true })); //support x-www-form-urlencoded
-app.use(bodyParser.json());
-app.use(expressValidator());
-
 /*MySql connection*/
 var connection  = require('express-myconnection'),
     mysql = require('mysql');
@@ -22,10 +13,10 @@ var connection  = require('express-myconnection'),
 app.use(
 
     connection(mysql,{
-        host     : 'process.env.DBHOST',
-        user     : 'process.env.DBUSER',
-        password : 'process.env.DBPWD',
-        database : 'mroom',
+        host     : 'localhost',
+        user     : 'root',
+        password : '',
+        database : 'meeting',
         debug    : false //set true if you wanna see debug logger
     },'request')
 
@@ -63,15 +54,13 @@ curut.get(function(req,res,next){
 
         if (err) return next("Cannot Connect");
 
-        var query = conn.query('SELECT * FROM rooms',function(err,rows){
+        var query = conn.query('SELECT * FROM `rooms` ORDER BY `rooms`.`calendar` ASC',function(err,rows){
 
             if(err){
                 console.log(err);
                 return next("Mysql error, check your query");
             }
 		res.end(req.query.callback + "('" + JSON.stringify(rows) + "')");
-		//console.log(req.query.callback + "('" + JSON.stringify(rows) + "')");
-//            res.render('user',{title:"RESTful Crud Example",data:rows});
          });
 
     });
@@ -96,32 +85,6 @@ curut2.all(function(req,res,next){
 });
 
 //get data to update
-curut2.get(function(req,res,next){
-
-    var roomname = req.params.roomname;
-	//console.log(val1);
-    req.getConnection(function(err,conn){
-
-        if (err) return next("Cannot Connect");
-
-        var query = conn.query("SELECT * FROM rooms WHERE roomname = ? ORDER BY rooms.calendar ASC",[roomname],function(err,rows){
-
-            if(err){
-                console.log(err);
-                return next("Mysql error, check your query");
-            }
-
-            //if user not found
-            if(rows.length < 1)
-                return res.send("Room Not found");
-
-            res.render('edit',{title:"Edit user",data:rows});
-        });
-
-    });
-
-});
-
 //update data
 curut2.put(function(req,res,next){
     
