@@ -1,0 +1,10 @@
+{
+  "dev": {
+    "host": "localhost",
+    "user": "root",
+    "password" :"gayu1997",
+    "database": "mroom",
+    "driver": "mysql",
+    "multipleStatements": true
+  }
+}

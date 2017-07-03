@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": process.env.DBUSER,
+    "password": process.env.DBPWD,
+    "database": "mroom",
+    "host": process.env.DBUSER,
+    "dialect": "mysql"
+  }
+}
