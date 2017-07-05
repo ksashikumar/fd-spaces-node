@@ -16,7 +16,14 @@ module.exports = function(sequelize, DataTypes) {
 	}, {
     classMethods:    {
             encontrar : function(res){ return sequelize
-                                    .query('SELECT id,roomname,roomname1,sensor,calendar FROM rooms', { raw: true }) }   
+                                    .query('SELECT id,roomname,roomname1,sensor,calendar FROM rooms', { raw: true }) },
+		postdata: function(req,res){ 
+					var v1=req.body.roomname;
+					var v2=req.body.sensor;
+					var v3="'"+v1+"'";
+					console.log(v3);
+					return sequelize
+                                    .query('UPDATE rooms SET sensor = '+ v2 +' where roomname = ' + v3, { raw: true }) }   
       }
   });
 
