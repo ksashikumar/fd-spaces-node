@@ -48,7 +48,7 @@ options:{
 },
     dev: {
       options: {
-        script: './server.js'
+        script: './bin/www'
       }
     },
   load: {
@@ -59,7 +59,7 @@ options:{
   },
   watch: {
       express: {
-        files: ['./server.js','./calendar.js'],
+        files: ['./bin/www','./calendar.js'],
         tasks: ['express']
 
       }

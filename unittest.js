@@ -46,6 +46,3 @@ exports.testRowsCount = function(test){
      }); 
  
 };
- 
-
-app.listen(5000);
