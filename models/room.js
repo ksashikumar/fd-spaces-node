@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
 	}, {
     classMethods:    {
             encontrar : function(res){ return sequelize
-                                    .query('SELECT id,roomname,roomname1,sensor,calendar FROM rooms', { raw: true }) },
+                                    .query('SELECT id,roomname,roomname1,sensor,calendar FROM rooms order by calendar ASC', { raw: true }) },
 		postdata: function(req,res){ 
 					var v1=req.body.roomname;
 					var v2=req.body.sensor;
