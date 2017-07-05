@@ -18,7 +18,7 @@ models.Room.encontrar().then(function(data){
 
 var a=models.Room.encontrar(res);
 a.then(function(data){
-		console.log(data);
+		//console.log(data);
 		res.end(req.query.callback + "('" + JSON.stringify(data[0]) + "')");	
 	});
 });
