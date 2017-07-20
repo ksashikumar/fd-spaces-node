@@ -72,10 +72,10 @@ options:{
   // ===========================================================================
   // we can only load these if they are in our package.json
   // make sure you have run npm install so our app can find these
-  grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-express-server');
 grunt.loadNpmTasks('grunt-keepalive');
 
 grunt.registerTask('default', ['express','keepalive']);
-//grunt.registerTask('dev', ['jshint:dev', 'uglify:dev', 'express:dev','less:dev']);
+
 };
