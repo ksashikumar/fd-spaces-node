@@ -18,7 +18,7 @@ jobs:
             - "v1-dependencies-{{ checksum \"package.json\" }}"
             - v1-dependencies-
       - run: 
-          command: "npm install && npm install mysql && sudo npm install mocha"
+          command: "npm install && npm install mysql && sudo npm install mocha && npm install sql-fixtures"
           name: "Install Dependencies"
       - run: 
           command: "sudo npm install nodeunit -g && sudo npm install -g db-migrate-mysql && sudo npm install -g migration && sudo npm install -g db-migrate && db-migrate create meeting && db-migrate up && node fixture.js"
