@@ -1,9 +1,9 @@
 {
   "dev": {
-    "host": "localhost",
-    "user": "root",
-    "password" :"root",
-    "database": "mroom",
+    "host": "dev.circleci.com: 127.0.0.1",
+    "user": "ubuntu",
+    "password" :" ",
+    "database": "circle_test",
     "driver": "mysql",
     "multipleStatements": true
   }
