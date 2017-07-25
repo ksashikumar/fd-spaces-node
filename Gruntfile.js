@@ -63,7 +63,7 @@ options:{
     },
  test2: {
         options: {
-        script: './test/unit/fixture.js'
+        script: './test/unit/insert_data.js'
         }
  },
 test3: {
