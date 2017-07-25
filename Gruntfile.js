@@ -90,7 +90,6 @@ test3: {
   grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-express-server');
 grunt.loadNpmTasks('grunt-keepalive');
-grunt.loadNpmTasks('grunt-contrib-connect');
 
 grunt.registerTask('default', ['express:dev','express:load','keepalive']);
 };
