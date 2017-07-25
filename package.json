@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "start": "DEBUG=express-sequelize node ./bin/www",
+    "test-unit1": "grunt express:test1 express:test2",
+    "test-unit2": "nodeunit test/unit/unittest.js",
+    "test-unit3": "grunt express:test3",
+    "test-unit" : "npm run test-unit1 && npm run test-unit2 && npm run test-unit3",
     "test": "npm run test-unit && npm run test-integration",
-    "test-unit": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/unit/*.test.js",
     "test-integration": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/integration/*.test.js"
   },
   "dependencies": {
