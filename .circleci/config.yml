@@ -29,8 +29,8 @@ jobs:
           name: Install Dependencies
           command: npm install && npm install mysql && sudo npm install mocha
       - run:
-          name: Nodeunit here
-          command: sudo npm install nodeunit -g
+          name: Nodeunit here && db
+          command: sudo npm install nodeunit -g && db-migrate create meeting && migrate up && node fixture.js
       - save_cache:
           paths:
             - node_modules
@@ -39,7 +39,7 @@ jobs:
       # run tests!
       - run:
           name: Unit testing 
-          command: cd test/unit && nodeunit unittest.js
+          command: cd .. && cd test/unit && nodeunit unittest.js
       - run:
           name: Integration testing
           command: cd .. && cd integration && npm run test-integration
