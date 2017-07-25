@@ -11,7 +11,7 @@ jobs:
       MYSQL_ROOT_PASSWORD: ubuntu
       MYSQL_USER: ubuntu
       MYSQL_ROOT_HOST: %
-      MYSQL_PASSWORD: " " 
+      MYSQL_PASSWORD: "" 
       MYSQL_DB: circle_test
    steps: 
       - checkout
