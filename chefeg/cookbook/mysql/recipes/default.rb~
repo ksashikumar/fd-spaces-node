@@ -1,0 +1,3 @@
+package "mysql2" do
+  action :install
+end
