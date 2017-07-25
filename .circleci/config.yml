@@ -9,7 +9,8 @@ jobs:
       DATABASE_URL: "mysql://ubuntu:@127.0.0.1:3306/circle_test"
       MYSQL_ROOT_PASSWORD: ubuntu
       MYSQL_USER: ubuntu
-      MYSQL_PASSWORD: ubuntu 
+      MYSQL_ROOT_HOST: %
+      MYSQL_PASSWORD: " " 
       MYSQL_DB: circle_test
    steps: 
       - checkout
