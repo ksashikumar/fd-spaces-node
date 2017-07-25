@@ -175,7 +175,6 @@ if (err) throw err;
 var flag=0;
 var calendar = google.calendar('v3');
 for(i=0;i<data.items.length;i++){
-// console.log(i);
 calendar.events.list({
 auth: auth,
 calendarId:data.items[i].resourceEmail,
