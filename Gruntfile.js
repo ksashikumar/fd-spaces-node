@@ -46,17 +46,32 @@ options:{
       logs: undefined
  
 },
-    dev: {
+   dev: {
       options: {
         script: './calendar.js'
       }
     },
   load: {
 	options: {
-        script: './bin/www',
+        script: './bin/www'
       }    
-    }
-  },
+    },
+  test1: {
+        options: {
+        script: './test/unit/test_table.js'
+        }
+    },
+ test2: {
+        options: {
+        script: './test/unit/insert_data.js'
+        }
+ },
+test3: {
+        options: {
+        script: './test/unit/drop_table.js'
+        }
+ }
+},
   watch: {
       express: {
         files: ['./calendar.js','./bin/www'],
@@ -72,10 +87,9 @@ options:{
   // ===========================================================================
   // we can only load these if they are in our package.json
   // make sure you have run npm install so our app can find these
-grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-express-server');
 grunt.loadNpmTasks('grunt-keepalive');
 
-grunt.registerTask('default', ['express','keepalive']);
-
+grunt.registerTask('default', ['express:dev','express:load','keepalive']);
 };
