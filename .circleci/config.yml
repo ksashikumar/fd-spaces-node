@@ -5,8 +5,12 @@ jobs:
    docker: 
       -  image: "circleci/node:7.10"
       -  image: "circleci/mysql:5.6"
-   environment: 
-        DATABASE_URL: "mysql://ubuntu:@127.0.0.1:3306/circle_test"
+   environment:
+      DATABASE_URL: "mysql://ubuntu:@127.0.0.1:3306/circle_test"
+      MYSQL_ROOT_PASSWORD: ubuntu
+      MYSQL_USER: ubuntu
+      MYSQL_PASSWORD: ubuntu 
+      MYSQL_DB: circle_test
    steps: 
       - checkout
       - restore_cache: 
@@ -29,4 +33,3 @@ jobs:
       - run: 
           command: "cd .. && cd integration && npm run test-integration"
           name: "Integration testing"
-
