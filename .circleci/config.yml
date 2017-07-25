@@ -30,7 +30,7 @@ jobs:
           command: npm install && npm install mysql && sudo npm install mocha
       - run:
           name: Nodeunit here && db
-          command: sudo npm install nodeunit -g && sudo npm install -g migration && db-migrate create meeting && migrate up && node fixture.js
+          command: sudo npm install nodeunit -g && sudo npm install -g migration && sudo npm install -g db-migrate && db-migrate create meeting && migrate up && node fixture.js
       - save_cache:
           paths:
             - node_modules
