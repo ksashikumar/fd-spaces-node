@@ -1,33 +1,46 @@
-'use strict';
+let chai = require('chai');
+let chaiHttp = require('chai-http');
+let server = require('/Users/user/Desktop/seqeg/app.js');
+let should = chai.should();
 
-var app      = require('../../app');
-var Bluebird = require('bluebird');
-var expect   = require('expect.js');
-var request  = require('supertest');
-
-describe('displaying rooms', function () {
-  before(function () {
-      return require('../../models').sequelize.sync();
+chai.use(chaiHttp);
+//Our parent block
+describe('Books', () => {
+/*
+  * Test the /GET route
+  */
+  describe('/GET rooms', () => {
+      it('it should GET all the rooms', (done) => {
+        chai.request(server)
+            .get('/')
+            .end((err, res) => {
+                res.should.have.status(200);
+                //res.body.should.be.a('array');
+                //res.body.length.should.be.eql(0);
+              done();
+            });
+      });
   });
-  
-  beforeEach(function () {
-    this.models = require('../../models');
 
-    return Bluebird.all([
-      this.models.Room.destroy({ truncate: true })
-    ]);
-  });
+  describe('/POST rooms', () => {
+      it('it should update room status', (done) => {
+        let room = {
+            roomname: "mercury",
+            sensor: 1
+        }
+        chai.request(server)
+            .post('/postman')
+            .send(room)
+            .end((err, res) => {
+                res.should.have.status(200);
+                //res.body.should.be.a('object');
+                //res.body.should.have.property('errors');
+                //res.body.errors.should.have.property('pages');
+                //res.body.errors.pages.should.have.property('kind').eql('required');
+              done();
+            });
+      });
 
-  it('loads correctly', function (done) {
-    request(app).get('/').expect(200, done);
-  });
-
-it('updates room status', function (done) {
-    this.models.Room.update({ calendar: 1 },{where: {roomname1: 'Mercury-Red-4S'}}).bind(this).then(function (result) {
-       }).then(function () {
-      request(app).get('/postman').expect(200, done);
-    });
   });
 
 });
-
