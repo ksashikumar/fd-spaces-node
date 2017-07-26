@@ -13,7 +13,7 @@ Procedure to execute the project:
 	
 	chef-solo -c ~solo.rb -j ~/chef_folder/node.json
 
-=> => Go to the folder where package.json exists:
+=> Go to the folder where package.json exists:
 	
 	npm install	
 	
@@ -22,10 +22,12 @@ Procedure to execute the project:
 	db-migrate up
 	
 	node fixture.js
-
-=> Run the project as (Open another terminal for Rails server):
 	
+=> To start node server:
+
 	grunt
+
+=> Open another terminal for Rails server:
 	
 	rails s	
 
