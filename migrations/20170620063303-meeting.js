@@ -15,7 +15,7 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return db.createTable('rooms_db', {
+  return db.createTable('rooms', {
     id: { type: 'int', primaryKey: true },
     roomname: 'string',
     roomname1: 'string',
@@ -26,7 +26,7 @@ exports.up = function(db) {
 };
 
 exports.down = function(db) {
-	return db.dropTable('rooms_db');
+	return db.dropTable('rooms');
 };
 
 exports._meta = {
