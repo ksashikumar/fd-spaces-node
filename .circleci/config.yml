@@ -3,14 +3,14 @@ jobs:
   build: 
    working_directory: ~/ksashikumar/fd-spaces-node
    docker: 
-      -  image: "circleci/node:7.10"
-      -  image: "circleci/mysql:5.6"
-   environment:
-      DATABASE_URL: "mysql://root:@127.0.0.1:3306/circle_test"
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root 
-      MYSQL_DB: circle_test
+      - image: "circleci/node:7.10" 
+      - image: "circleci/mysql:5.6"
+        environment:
+           DATABASE_URL: "mysql://root:@127.0.0.1:3306/circle_test"
+           MYSQL_ROOT_PASSWORD: root
+           MYSQL_USER: root
+           MYSQL_PASSWORD: root 
+           MYSQL_DB: circle_test
    steps: 
       - checkout
       - restore_cache: 
@@ -28,8 +28,9 @@ jobs:
           paths: 
             - node_modules
       - run: 
-          command: "cd .. && cd test/unit && nodeunit unittest.js"
           name: "Unit testing"
+          command: "cd .. && cd test/unit && nodeunit unittest.js"
       - run: 
-          command: "cd .. && cd integration && npm run test-integration"
           name: "Integration testing"
+          command: "cd .. && cd integration && npm run test-integration"
+          
