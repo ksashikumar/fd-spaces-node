@@ -1,3 +1,3 @@
-file_cache_path "/Users/user/chef"
-cookbook_path "/Users/user/chef/cookbook"
-json_attribs "/Users/user/chef/node.json"
+file_cache_path "./chef"
+cookbook_path "./chef/cookbook"
+json_attribs "./chef/node.json"
