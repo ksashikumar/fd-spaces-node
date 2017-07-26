@@ -6,7 +6,7 @@ jobs:
       - image: "circleci/node:7.10" 
       - image: "circleci/mysql:5.6"
         environment:
-           DATABASE_URL: "ubuntu://root:@127.0.0.1:3306/circle_test"
+           DATABASE_URL: "mysql://ubuntu:@127.0.0.1:3306/circle_test"
            MYSQL_ROOT_USER: ubuntu
            MYSQL_ROOT_PASSWORD: ubuntu
            MYSQL_USER: ubuntu
