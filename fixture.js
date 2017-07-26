@@ -22,3 +22,5 @@ sqlFixtures.create(dbConfig, dataSpec, function(err, result) {
   console.log(result.rooms[0].roomname1);
 });
 console.log("Data entered");
+
+process.exit();
