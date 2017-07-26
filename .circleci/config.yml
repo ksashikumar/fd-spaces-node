@@ -6,6 +6,7 @@ jobs:
       - image: "circleci/node:7.10" 
       - image: "circleci/mysql:5.6"
         environment:
+           MYSQL_ROOT_PASSWORD: ubuntu
            MYSQL_USER: ubuntu
            MYSQL_PASSWORD: ""
            MYSQL_DB: circle_test
