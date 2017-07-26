@@ -5,9 +5,9 @@ var sqlFixtures = require('sql-fixtures');
 var dbConfig = {
 	client: 'mysql',
   connection: {
-    host: '127.0.0.1',
-    user: 'ubuntu',
-    password:'ubuntu',
+    host: "localhost",
+    user: "ubuntu",
+    password:"ubuntu",
     database: "circle_test"
   }
 };
