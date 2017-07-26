@@ -18,9 +18,8 @@ var dataSpec = {
  
 sqlFixtures.create(dbConfig, dataSpec, function(err, result) {
   // at this point a row has been added to the users table 
-	//console.log("Data entering");
-  //console.log(result.rooms[0].roomname1);
+    console.log("Data entering");
+    console.log(result.rooms[0].roomname1);
 });
 //console.log("Data entered");
-
-//process.exit();
+process.exit();
