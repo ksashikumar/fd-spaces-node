@@ -28,7 +28,7 @@ jobs:
             - node_modules
       - run: 
           name: "Unit testing"
-          command: "cd .. && cd ./test/unit && nodeunit unittest.js"
+          command: "cd .. && cd /test/unit && nodeunit unittest.js"
       - run: 
           name: "Integration testing"
           command: "cd .. && cd integration && npm run test-integration"
