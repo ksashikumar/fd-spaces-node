@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": process.env.DBUSER,
-    "password": process.env.DBPWD,
-    "database": "mroom",
-    "host": process.env.DBHOST,
+    "username": "ubuntu",
+    "password": "ubuntu",
+    "database": "circle_test",
+    "host": "localhost",
     "dialect": "mysql"
   }
 }
