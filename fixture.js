@@ -6,8 +6,8 @@ var dbConfig = {
 	client: 'mysql',
   connection: {
     host: '127.0.0.1',
-    user: 'root',
-    password:'root',
+    user: 'ubuntu',
+    password:'ubuntu',
     database: 'circle_test'
   }
 };
