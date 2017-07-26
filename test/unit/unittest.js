@@ -3,10 +3,10 @@ var mysql      = require('mysql');
 var app = express();
  require('dotenv').config();
 var connectionInfo = {
-  host     : process.env.DB_HOST,  // mysql server hostname 
-  user     : process.env.DB_USER,       // mysql database user name
-  password : process.env.DB_PASS,       // mysql database password
-  database : 'meeting'  // mysql database name
+  host     : "localhost",  // mysql server hostname 
+  user     : "ubuntu",       // mysql database user name
+  password : "ubuntu",       // mysql database password
+  database : 'circle_test'  // mysql database name
 }
  
 var connection = mysql.createConnection(connectionInfo);
