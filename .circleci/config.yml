@@ -31,7 +31,7 @@ jobs:
           command: "pwd"
       - run: 
           name: "Unit testing"
-          command: "cd /home/circleci/ksashikumar/fd-spaces-node/test/unit && nodeunit unittest.js"
+          command: "cd /home/circleci/ksashikumar/fd-spaces-node/test/unit && node test_table.js && node insert_data.js && nodeunit unittest.js"
       - run: 
           name: "Integration testing"
           command: "cd /home/circleci/ksashikumar/fd-spaces-node/test/integration && npm run test-integration"
