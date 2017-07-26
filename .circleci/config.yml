@@ -27,9 +27,6 @@ jobs:
           paths: 
             - node_modules
       - run: 
-          name: "pwd cmd"
-          command: "pwd"
-      - run: 
           name: "Integration testing"
           command: "cd /home/circleci/ksashikumar/fd-spaces-node/test/integration && npm run test-integration"
           
