@@ -3,8 +3,6 @@ The status of the meeting rooms are updated, considering the pre-booking details
 
 Procedure to execute the project:
 
-=> Go to the required folder
-
 => Enter these commands in order:
 
 	rvm install 2.3.1
@@ -15,7 +13,7 @@ Procedure to execute the project:
 	
 	chef-solo -c ~solo.rb -j ~/chef_folder/node.json
 
-=> Run from directory where package.json exists:
+=> => Go to the folder where package.json exists:
 	
 	npm install	
 	
@@ -25,7 +23,7 @@ Procedure to execute the project:
 	
 	node fixture.js
 
-=> Run the project as (Another terminal):
+=> Run the project as (Open another terminal for Rails server):
 	
 	grunt
 	
