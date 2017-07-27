@@ -7,25 +7,15 @@ Procedure to execute the project:
 
 	rvm install 2.3.1
 	
-=> Run from directory where solo.rb exists(chef-folder and solo.rb must be in same location):
+=> To deploy the project for the first time , Run from directory where solo.rb exists(chef_folder and solo.rb must be in same    location):
 	
 	gem install chef
 	
 	chef-solo -c ~solo.rb -j ~/chef_folder/node.json
+	
+=> To start node server for subsequent runs:
 
-=> Go to the folder where package.json exists:
-	
-	npm install	
-	
-	db-migrate create meeting
-	
-	db-migrate up
-	
-	node fixture.js
-	
-=> To start node server:
-
-	grunt
+	chef-solo -c ~/solo.rb -j ~/chef_folder/node.json --override-runlist "recipe["start"]"
 
 => Open another terminal for Rails server:
 	
